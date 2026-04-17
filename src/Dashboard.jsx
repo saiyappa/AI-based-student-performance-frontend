@@ -23,12 +23,12 @@ function Dashboard() {
 
       console.log("TOKEN:", token);
 
-      const res = await axios.post(
+      const res = axios.post(
         "https://ai-based-student-performance-prediction-ytk1.onrender.com/predict",
         form,
         {
           headers: {
-            Authorization: `Bearer ${token}` // 🔥 MUST BE THIS
+            Authorization: `Bearer ${localStorage.getItem("token")}`
           }
         }
       );
