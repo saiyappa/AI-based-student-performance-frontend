@@ -21,24 +21,24 @@ function Dashboard() {
     try {
       const token = localStorage.getItem("token");
 
-      console.log("TOKEN:", token);
+      console.log("TOKEN:", token); // debug
 
-      const res = axios.post(
+      const res = await axios.post(
         "https://ai-based-student-performance-prediction-ytk1.onrender.com/predict",
         form,
         {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`
+            Authorization: `Bearer ${token}` // 🔥 IMPORTANT
           }
         }
       );
 
       setResult(res.data.prediction);
-      setHistory(prevHistory => [...prevHistory, { prediction: res.data.prediction }]);
+      setHistory(prev => [...prev, { prediction: res.data.prediction }]);
 
     } catch (error) {
       console.error("ERROR:", error.response?.data);
-      alert("Unauthorized! Please login again");
+      alert("Unauthorized! Please login again ❌");
     }
   };
 
