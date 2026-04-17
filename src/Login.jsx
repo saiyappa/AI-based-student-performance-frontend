@@ -14,7 +14,7 @@ function Login({ setLoggedIn }) {
 
   const login = async () => {
     try {
-      const res = await axios.post("http://127.0.0.1:5000/login", form);
+      const res = await axios.post("https://ai-based-student-performance-prediction-ytk1.onrender.com/login", form);
 
       // ✅ ADD HERE (inside function)
       console.log("FULL RESPONSE:", res.data);

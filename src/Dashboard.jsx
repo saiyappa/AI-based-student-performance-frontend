@@ -24,7 +24,7 @@ function Dashboard() {
       console.log("TOKEN:", token);
 
       const res = await axios.post(
-        "http://127.0.0.1:5000/predict",
+        "https://ai-based-student-performance-prediction-ytk1.onrender.com/predict",
         form,
         {
           headers: {

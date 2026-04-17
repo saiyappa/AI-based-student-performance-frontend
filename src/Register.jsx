@@ -12,14 +12,14 @@ function Register() {
   };
 
   const register = async () => {
-  try {
-    const res = await axios.post("http://127.0.0.1:5000/register", form);
-    alert(res.data.message);
-  } catch (err) {
-    console.log(err.response.data); // 👈 IMPORTANT
-    alert(err.response.data.error); // 👈 show actual error
-  }
-};
+    try {
+      const res = await axios.post("https://ai-based-student-performance-prediction-ytk1.onrender.com/register", form);
+      alert(res.data.message);
+    } catch (err) {
+      console.log(err.response.data); // 👈 IMPORTANT
+      alert(err.response.data.error); // 👈 show actual error
+    }
+  };
 
   return (
     <div className="container">
